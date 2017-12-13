@@ -1,8 +1,12 @@
 package com.chenchen.models;
 
+import org.apache.log4j.Logger;
+
 import java.io.Serializable;
 
 public class User implements Serializable{
+    static Logger logger = Logger.getLogger(User.class);
+
     private int id;
     private String name;
     private String dept;
@@ -12,6 +16,7 @@ public class User implements Serializable{
     private Sex sex2;
 
     public User() {
+        logger.info("User construct!");
     }
 
     public String getWebsite() {
