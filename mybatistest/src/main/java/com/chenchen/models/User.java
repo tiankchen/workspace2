@@ -16,7 +16,7 @@ public class User implements Serializable{
     private Sex sex2;
 
     public User() {
-        logger.info("User construct!");
+        logger.debug("User construct!");
     }
 
     public String getWebsite() {
