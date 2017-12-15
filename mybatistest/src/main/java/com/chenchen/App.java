@@ -32,10 +32,11 @@ public class App {
 //        logger.info("Exiting application");
 
         // Example 2
-        PropertyConfigurator.configure("src/main/resources/log4j.properties");
+        PropertyConfigurator.configure("src/main/resources/log4j2.properties");
 
         logger.info("Entering application");
         User user = new User();
         logger.info("Exiting application");
+        logger.error("This is error log");
     }
 }
