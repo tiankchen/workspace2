@@ -11,17 +11,28 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
+import org.apache.log4j.Logger;
+import org.apache.log4j.spi.LoggerFactory;
 
 import javax.sql.DataSource;
 import java.io.Reader;
 import java.math.RoundingMode;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Vector;
 
 public class Main {
 
+    private static Logger logger = Logger.getLogger(Main.class);
+
     private static SqlSessionFactory sqlSessionFactory;
     private static Reader reader;
+
+
+    private String[] states = new String[] {
+            "AK", "AL"
+    };
 
     static {
         try {
@@ -62,6 +73,27 @@ public class Main {
      */
     public static void main(String[] args) {
 
+        Vector<String> vec = new Vector<String>();
+        vec.add("str1");
+        vec.add("str2");
+        vec.add("str3");
+
+        Iterator<String> it1 = vec.iterator();
+        Iterator<String> it2 = vec.iterator();
+        it1.next();
+        it1.remove();
+
+        it2.next();
+
+
+        String str = "str1";
+        str = "chenchen";
+        if(vec.contains(str))
+        {
+            System.out.println("Match str1");
+        }
+
+
         SqlSession session = sqlSessionFactory.openSession();
         try {
             UserMapper userMapper = session.getMapper(UserMapper.class);
@@ -83,5 +115,13 @@ public class Main {
         } finally {
             session.close();
         }
+    }
+
+    public String[] getStates() {
+        return states.clone();
+    }
+
+    public void setStates(String[] states) {
+        this.states = states.clone();
     }
 }

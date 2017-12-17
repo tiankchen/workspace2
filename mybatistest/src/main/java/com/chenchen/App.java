@@ -3,6 +3,7 @@ package com.chenchen;
 
 import com.chenchen.models.User;
 import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.ConsoleAppender;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -38,5 +39,8 @@ public class App {
         User user = new User();
         logger.info("Exiting application");
         logger.error("This is error log");
+
+
+
     }
 }
