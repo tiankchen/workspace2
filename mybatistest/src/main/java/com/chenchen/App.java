@@ -2,10 +2,7 @@ package com.chenchen;
 
 
 import com.chenchen.models.User;
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
+
 
 import java.io.*;
 
@@ -13,7 +10,7 @@ import java.io.*;
  * Hello world!
  */
 public class App {
-    static Logger logger = Logger.getLogger(App.class);
+    //static Logger logger = Logger.getLogger(App.class);
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
@@ -33,12 +30,12 @@ public class App {
 //        logger.info("Exiting application");
 
         // Example 2
-        PropertyConfigurator.configure("src/main/resources/log4j2.properties");
-
-        logger.info("Entering application");
-        User user = new User();
-        logger.info("Exiting application");
-        logger.error("This is error log");
+//        PropertyConfigurator.configure("src/main/resources/log4j2.properties");
+//
+//        logger.info("Entering application");
+//        User user = new User();
+//        logger.info("Exiting application");
+//        logger.error("This is error log");
 
 
 

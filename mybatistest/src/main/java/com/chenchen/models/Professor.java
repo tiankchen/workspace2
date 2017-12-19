@@ -1,18 +1,10 @@
 package com.chenchen.models;
 
-//import org.apache.log4j.Logger;
-
-import java.io.Serializable;
-import java.util.Date;
-
-public class User implements Serializable, Cloneable {
-  //  static Logger logger = Logger.getLogger(User.class);
+public class Professor implements Cloneable{
 
     private String name;
-    private int age;
 
-    public User() {
-    }
+    private int age;
 
     public String getName() {
         return name;
@@ -32,10 +24,7 @@ public class User implements Serializable, Cloneable {
 
     @Override
     public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                '}';
+        return "Professor [name=" + name + ", age=" + age + "]";
     }
 
     @Override

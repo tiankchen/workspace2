@@ -11,20 +11,18 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.TransactionFactory;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
-import org.apache.log4j.Logger;
-import org.apache.log4j.spi.LoggerFactory;
+import org.slf4j.Logger;
+//import org.apache.log4j.Logger;
+//import org.apache.log4j.spi.LoggerFactory;
 
 import javax.sql.DataSource;
 import java.io.Reader;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
 
 public class Main {
 
-    private static Logger logger = Logger.getLogger(Main.class);
+    //private static final ThreadLocal<Logger> logger = ThreadLocal.withInitial(() -> Logger.getLogger(Main.class));
 
     private static SqlSessionFactory sqlSessionFactory;
     private static Reader reader;
@@ -73,26 +71,6 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        Vector<String> vec = new Vector<String>();
-        vec.add("str1");
-        vec.add("str2");
-        vec.add("str3");
-
-        Iterator<String> it1 = vec.iterator();
-        Iterator<String> it2 = vec.iterator();
-        it1.next();
-        it1.remove();
-
-        it2.next();
-
-
-        String str = "str1";
-        str = "chenchen";
-        if(vec.contains(str))
-        {
-            System.out.println("Match str1");
-        }
-
 
         SqlSession session = sqlSessionFactory.openSession();
         try {
@@ -104,7 +82,7 @@ public class Main {
 
             User user1 = new User();
             user1.setName("new");
-            user1.setSex2(Sex.Man);
+            //user1.setSex2(Sex.Man);
             userMapper.insetUser(user1);
 
             session.commit();
