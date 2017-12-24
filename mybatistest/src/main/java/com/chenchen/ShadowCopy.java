@@ -31,6 +31,13 @@ public class ShadowCopy {
 
 
         org.apache.log4j.Logger n = org.apache.log4j.Logger.getLogger("aaa");
+
+        logger.info(logger.getName());
+
+        RuntimeException exception = new RuntimeException();
+        logger.error("test exception: {}", exception);
+
+        logger.error("aaaa");
     }
 
 }
