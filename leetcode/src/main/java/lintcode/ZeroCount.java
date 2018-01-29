@@ -1,7 +1,11 @@
 package lintcode;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 public class ZeroCount {
 
+    int i;
     /**
      * @brief 计算 n! 尾数中 0 的数目
      * n! 中的 5 的个数，就是每隔多少个数有一个5，所以取 n/5 + n/25，因为每隔 25 有 2 个 5
