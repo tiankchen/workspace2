@@ -1,0 +1,5 @@
+com\chenchen\models\Sex.class
+com\chenchen\App.class
+com\chenchen\models\User.class
+com\chenchen\Main.class
+com\chenchen\dao\UserMapper.class

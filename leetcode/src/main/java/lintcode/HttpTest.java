@@ -10,6 +10,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.util.StringTokenizer;
 
 public class HttpTest {
     public static void main(String args[]) throws IOException {
@@ -22,6 +23,16 @@ public class HttpTest {
         String result = new String(bytes, "utf8");
 
         System.out.println(result);
+
+        String line = new String("aaaaaabbcccdddbbaaaa");
+        line.startsWith("a");
+
+        StringTokenizer st = new StringTokenizer(line, "bb");
+        while (st.hasMoreTokens()){
+            System.out.println(st.nextToken());
+        }
+
+
     }
 
 }

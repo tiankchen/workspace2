@@ -18,6 +18,15 @@ public class Main {
 
     public static void main(String args[]) {
 
+        Main m2  = new Main(2);
+        Main m3  = new Main(3);
+
+        Class m2class = m2.getClass();
+        Class m3class = m3.getClass();
+
+        int[] i2 = {1 ,2};
+        System.out.println(i2.getClass().getName());
+
         String str = "hello";
         str.hashCode();
 
